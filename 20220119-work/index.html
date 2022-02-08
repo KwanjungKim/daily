@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      width: 1920px;
+      height: 1080px;
+      background-color: #fff;
+      padding-left: 100px;
+    }
+    header,main,footer { width: 500px;}
+
+    header,footer {
+      height: 200px;
+      background-color: #969696;
+    }
+    main {
+      height: 500px;
+      background-color: #484848;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    main > div {width: 200px; height: 400px;}
+    main .left {background-color: #ddd;}
+    main .right {display: flex; flex-direction: column; justify-content: space-between;}
+    main .right > div { width: 200px; height: 180px; background-color: #ddd;}
+    footer {background-color: #ddd;}
+  </style>
+</head>
+<body>
+  <header></header>
+  <main>
+    <div class="left"></div>
+    <div class="right">
+      <div class="top"></div>
+      <div class="down"></div>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+</html>

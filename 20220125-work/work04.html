@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM TREE</title>
+</head>
+<body>
+  <div id="container"> container
+    <div> h1parent
+      <h1 id="target">hello</h1>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, eligendi.</p>
+    </div>
+  </div>
+
+  <script>
+
+    // 식별자의 관계를 사용하고 있다. 
+    const h1 = document.querySelector("#target");
+
+    console.dir(h1.parentElement.parentElement.parentElement);
+
+    h1.parentElement.parentElement.parentElement.style.backgroundColor = "gray";
+
+
+  </script>
+</body>
+</html> 

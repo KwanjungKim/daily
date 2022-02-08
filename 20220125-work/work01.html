@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="hello">hello</h1>
+  <p class="world">world</p>
+  <script>
+    const h1 = document.querySelector('.hello');
+    const p = document.querySelector('.world');
+    h1.addEventListener('click',function(){
+      h1.style.fontSize = 10 +"rem";
+      p.style.fontSize = 2 + "rem";
+      p.textContent = "hello";
+    })
+    let timer = setInterval(function(){
+      console.log("bye");
+    },1000)
+    console.dir(h1.parentElement);
+    h1.parentElement.backgroundColor = "gray";
+  </script>
+</body>
+</html>

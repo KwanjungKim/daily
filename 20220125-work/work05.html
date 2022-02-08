@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function animateHandleOne(startValue, endValue, animateValue) {
+    //   let timer = setInterval(function() {
+    //   if(startValue < endValue) {
+    //   startValue = startValue + animateValue;
+    //   console.log(startValue);
+    //   } else {
+    //     currentValue = startValue;
+    //     console.log("done");
+    //     clearInterval(timer);
+    //     }
+    //   }, 16);
+    // }
+    // animateHandleOne(0, 100, 1);
+    function animateHandleFour(startValue, endValue, animateValue, speed) {
+      if(typeof startValue === 'number') {
+      let timer = setInterval(function() {
+      if(startValue < endValue) {
+        startValue = startValue + animateValue;
+        console.log(startValue);
+        } else {
+          clearInterval(timer);
+          }
+        }, speed);
+      } else {
+        console.log("매개변수 타입을 체크하세요.");
+      }
+    }
+
+    animateHandleFour(0, 100, 1, 32);
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">똑딱이</button>
+  <script>
+    const btn = document.querySelector('.btn');
+    btn.parentElement.style.backgroundColor = "white";
+    let bodyBackgroundColor = btn.parentElement.style.backgroundColor;
+    // 자바스크립트 중/상급 구조 원리
+    // 값을 그대로 가져오기만 하는 객체값과 제어할 수 있는 직접적인 방법
+    // 변수를 원활하게 설정해서 제어하는 방법 vs 값을 가져올 수 있기만 한 제어가 있다.
+    // DOM(미리 생성된 객체의 본래 특성때문에 발생하는 현상)이 가진 본연의 특성 문제 
+    // 자바스크립트로 구조화 / 초기화(초기설정) / 할당 / 제어 를 모두 함께 한다면 
+    // 간단하게 해결 할 수 있다.
+    
+    
+
+    console.log(bodyBackgroundColor);
+    btn.addEventListener('click', function () {
+      if (btn.parentElement.style.backgroundColor === "white") {
+        btn.parentElement.style.backgroundColor = "black";
+      } else {
+        btn.parentElement.style.backgroundColor = "white";
+      }
+    });
+  </script>
+</body>
+</html>

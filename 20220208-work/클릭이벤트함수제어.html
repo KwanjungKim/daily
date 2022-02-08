@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    #handle-element {
+      width: 100px;
+      height: 100px;
+      background-color: #333;
+      position:relative;
+    }
+
+  </style>
+</head>
+
+<body>
+  <button>click</button>
+  <div id="handle-element"></div>
+
+  <script>
+    const clickBtn = document.querySelector('button');
+    const handleElement = document.querySelector('#handle-element');
+
+
+
+    let current = 0;
+
+    function moveSlide(clickTarget, handleTarget, handleValue, addValue) {
+
+      clickTarget.addEventListener('click', function() {
+        handleValue = handleValue + addValue;
+        handleTarget.style.left = handleValue + 'px';
+        return console.log(handleValue);
+      });
+    }
+
+    moveSlide(clickBtn, handleElement, current, 5);
+
+
+
+    // let current = 1;
+    // let count = 0;
+    // function moveSlide(num, clickCount) {
+    //   clickCount++;
+    //   let value = num + clickCount;
+
+
+    //   console.log(value);
+    //   return clickCount;
+    // }
+
+    // clickBtn.addEventListener('click', function() {
+    //   moveSlide(current);
+    // });
+
+
+
+  </script>
+
+</body>
+
+</html> 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>solution</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      width: 100vw;
+      height: 100vh;
+      /* parent tag */
+      position: relative;
+    }
+
+    #container div {
+      width: 100vw;
+      height: 100vh;
+
+      /* overlapping position */
+      position: absolute;
+    }
+
+    #container div:nth-child(1) {
+      background-color: salmon;
+    }
+
+    #container div:nth-child(2) {
+      background-color: chocolate;
+    }
+
+    #container div:nth-child(3) {
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <script>
+    let orderIndex = 0;
+    const container = document.querySelector('#container');
+    function action(parentElement) {
+      console.dir(parentElement);
+      let getChildren = parentElement.children;
+      let totalChildrenCount = 0;
+      let currentCount = 0;
+      if (getChildren !== null) {
+        console.log('hello');
+        for (let i = 0; i < getChildren.length; i++) {
+          totalChildrenCount++;
+          getChildren[i].style.visibility = 'hidden';
+        }
+        console.log(`children element count : ${totalChildrenCount}`);
+        parentElement.addEventListener('click', function () {
+          console.log(currentCount);
+          if (currentCount === 0) {
+            getChildren[currentCount].style.visibility = "visible";
+          }
+          if (currentCount > 0 && currentCount < getChildren.length) {
+            getChildren[currentCount].style.visibility = "visible";
+            getChildren[currentCount - 1].style.visibility = "hidden";
+          }
+          if (currentCount === getChildren.length) {
+            currentCount = 0;
+            for(let i = 1; i < getChildren.length; i++) {
+              getChildren[i].style.visibility = "hidden";
+            }
+          }
+          if (currentCount > 0) {}
+          currentCount++;
+          if (currentCount > totalChildrenCount) {
+            currentCount = 0;
+          }
+        });
+      } else {
+        console.log('have not exist, need to check parameter');
+      }
+    }
+    action(container);
+  </script>
+</body>
+
+</html>
