@@ -1,0 +1,41 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div id="container">
+      <div id="content">
+        <p id="text-box">test</p>
+        <div id="vertical-bar"></div>
+        <div id="title-box">
+          <h1>i am</h1>
+          <h1>a</h1>
+          <h1>tiger</h1>
+          <h1>with wings</h1>
+        </div>
+      </div>
+    </div>    
+ 
+    <script>
+
+      function flexSet(target, justifyContent, alignItems, flexDirection) {
+        target.style.display = "flex";
+        target.style.justifyContent = justifyContent;
+        target.style.alignItems = alignItems;
+        target.style.flexDirection = flexDirection;
+      }
+
+      const container = document.querySelector('#container');
+      flexSet(container, "center", "center", "row");
+
+
+    </script>
+
+</body>
+</html>

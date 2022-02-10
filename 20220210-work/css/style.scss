@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+
+//  ****************************************************************
+
+@mixin content-size-set($width, $height) {
+  width:$width;
+  height:$height;
+}
+@mixin background-color-set($color-value) {
+  background-color:$color-value;
+}
+@mixin flex-set($justify-content, $align-items, $flex-direction) {
+  display:flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
+// ****************************************************************
+
+
+#container {
+  @include content-size-set(100vw, 100vh);
+  @include background-color-set(#333);
+  @include flex-set(center, center, row);
+  
+  div { // #content
+    @include content-size-set(70vw,50vh);
+    @include background-color-set(#ccc);
+    @include flex-set(center, center, row);
+    & p:nth-child(1) { // #text-box
+      @include content-size-set(30vw, inherit);
+      @include background-color-set(salmon);
+    }
+    & div:nth-child(2) { // #vertical bar
+      @include content-size-set(1vw, inherit);
+      @include background-color-set(#f1f3f4);
+    }
+    & div:nth-child(3) {
+      @include flex-set(center, flex-start, column);
+    }
+  }
+}
+
